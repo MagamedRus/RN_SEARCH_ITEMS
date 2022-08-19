@@ -20,7 +20,7 @@ export default CategoryCard;
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     alignContent: "space-between",
     minHeight: 200,
     width: 144,
@@ -41,9 +41,6 @@ const styles = StyleSheet.create({
 
   txt: {
     maxHeight: 80,
-    minHeight: 40,
-    marginHorizontal: "auto",
-    textAlignVertical: "center",
     textAlign: "center",
     marginTop: 6,
 	fontSize: 16,
