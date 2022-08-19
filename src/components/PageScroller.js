@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, StyleSheet, View, FlatList } from "react-native";
+import { Dimensions, StyleSheet, View, FlatList, Text } from "react-native";
 import { getPagesArr } from "../common/pages";
 import ArrowButton from "./ArrowButton";
 import PageNumber from "./PageNumber";
@@ -20,7 +20,7 @@ function PageScroller({ currentPage, pageCount, onChange }) {
         isChoosed={currentPage === item.value}
         onPress={onChange}
       />
-      {currentPage !== pageCount && <Text style={styles.dotText}>●</Text>}
+      {item.value !== pageCount && <Text style={styles.dotText}>●</Text>}
     </>
   );
 
