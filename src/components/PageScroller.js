@@ -57,12 +57,12 @@ const styles = StyleSheet.create({
   },
   prevBtn: {
     position: "absolute",
-    height: 30,
+    height: 38,
     left: -8,
   },
   nextButtton: {
     position: "absolute",
-    height: 30,
+    height: 38,
     right: -8,
     transform: [{ rotateY: "180deg" }],
   },

@@ -16,10 +16,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: 50,
-	width: 50,
+    width: 50,
   },
   txt: {
-    fontSize: 28,
+    fontSize: 22,
     color: "white",
+    fontFamily: "Inter-Medium",
   },
 });

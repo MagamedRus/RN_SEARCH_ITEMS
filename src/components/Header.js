@@ -28,10 +28,12 @@ const styles = StyleSheet.create({
   txt: {
     color: "rgba(255,255,255,1)",
     textAlign: "left",
-    fontSize: 18,
-    height: 27,
+    textAlignVertical: 'center',
+    fontSize: 19,
     width: 210,
     marginLeft: 15,
-    marginTop: 5
+    marginTop: 5,
+    fontFamily: "Inter-Medium",
+
   }
 })

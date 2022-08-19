@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "space-between",
     alignContent: "space-between",
-    height: 200,
+    minHeight: 200,
     width: 144,
     marginVertical: 5,
     borderColor: "#d9caca",
@@ -46,5 +46,8 @@ const styles = StyleSheet.create({
     textAlignVertical: "center",
     textAlign: "center",
     marginTop: 6,
+	fontSize: 16,
+	color: 'black',
+	fontFamily: 'Inter-Light'
   },
 });

@@ -13,10 +13,12 @@ function ItemCard({ item }) {
       <Image style={styles.img} source={imageSrc} />
       <View style={styles.aboutContainer}>
         <Text style={styles.nameText}>{item.name}</Text>
-        <Text style={styles.aboutText}>
-          Цена: {Math.round(item.price)} {currencySign}
-        </Text>
-        <Text style={styles.aboutText}>Вес: {item.weight} г.</Text>
+        <View style={styles.underNameTextContainer}>
+          <Text style={styles.aboutText}>
+            Цена: {Math.round(item.price)} {currencySign}
+          </Text>
+          <Text style={styles.aboutText}>Вес: {item.weight} г.</Text>
+        </View>
       </View>
     </View>
   );
@@ -28,8 +30,7 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "row",
-    width: "90%",
-    height: 100,
+    alignItems: "center",
     marginHorizontal: "5%",
     marginBottom: 10,
     borderColor: "#d9caca",
@@ -43,16 +44,22 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   img: {
-    height: 80,
-    width: 80,
+    height: 85,
+    width: 85,
     marginRight: 15,
     borderRadius: 5,
     borderWidth: 1,
     borderColor: "#d2d2d2",
   },
   nameText: {
+    fontSize: 17,
+    minHeight: 32,
+    letterSpacing: 0.5,
+    fontFamily: "Inter-Medium",
+  },
+  aboutText: {
     fontSize: 16,
-    height: 24,
-    letterSpacing: .5,
-  }
+    fontFamily: "Inter-regular",
+    letterSpacing: 0.5,
+  },
 });
