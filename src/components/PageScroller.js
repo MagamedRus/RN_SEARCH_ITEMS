@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, StyleSheet, View, FlatList } from "react-native";
+import { Dimensions, StyleSheet, View, FlatList, Text } from "react-native";
 import { getPagesArr } from "../common/pages";
 import ArrowButton from "./ArrowButton";
 import PageNumber from "./PageNumber";
@@ -12,25 +12,27 @@ function PageScroller({ currentPage, pageCount, onChange }) {
   const goNextPage = () => !isLastPage && onChange(currentPage + 1);
   const goPrevPage = () => !isFirstPage && onChange(currentPage - 1);
 
-  const renderNumber = ({ item }) => (
-    <PageNumber
-      key={item.id}
-      number={item.value}
-      isChoosed={currentPage === item.value}
-      isLast={pageCount === item.value}
-      onPress={onChange}
-    />
+  const renderItem = ({ item }) => (
+    <>
+      <PageNumber
+        key={item.id}
+        number={item.value}
+        isChoosed={currentPage === item.value}
+        onPress={onChange}
+      />
+      {item.value !== pageCount && <Text style={styles.dotText}>●</Text>}
+    </>
   );
 
   return (
     <View style={styles.container}>
-      <ArrowButton style={styles.prevBtn} onPress={goPrevPage} />
+      <ArrowButton style={styles.prevButtton} onPress={goPrevPage} />
       <FlatList
         horizontal={true}
         style={styles.numberList}
         showsHorizontalScrollIndicator={false}
         data={pagesArr}
-        renderItem={renderNumber}
+        renderItem={renderItem}
         onEndReachedThreshold={0.7}
       />
       <ArrowButton style={styles.nextButtton} onPress={goNextPage} />
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     width: Dimensions.get("screen").width - 90,
   },
-  prevBtn: {
+  prevButtton: {
     position: "absolute",
     height: 38,
     left: -8,
@@ -65,5 +67,12 @@ const styles = StyleSheet.create({
     height: 38,
     right: -8,
     transform: [{ rotateY: "180deg" }],
+  },
+  dotText: {
+    lineHeight: 40,
+    fontSize: 18,
+    color: "white",
+    marginHorizontal: 3,
+    textAlign: "center",
   },
 });

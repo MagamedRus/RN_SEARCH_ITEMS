@@ -9,12 +9,9 @@ function PageNumber({ number, onPress, isChoosed, isLast }) {
   const selectPage = () => !isChoosed && onPress(number);
 
   return (
-    <>
-      <TouchableOpacity onPress={selectPage}>
-        <Text style={numberStyle}>{number}</Text>
-      </TouchableOpacity>
-      {!isLast && <Text style={styles.pageNumber}>●</Text>}
-    </>
+    <TouchableOpacity onPress={selectPage}>
+      <Text style={numberStyle}>{number}</Text>
+    </TouchableOpacity>
   );
 }
 

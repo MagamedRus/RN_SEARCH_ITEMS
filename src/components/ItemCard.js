@@ -6,6 +6,7 @@ function ItemCard({ item }) {
   const imageSrc = item.img
     ? { uri: item.img }
     : require("../assets/img/nonImgIco.png");
+
   const currencySign = getOnlyCurrencySign(item.currencySign);
 
   return (
@@ -13,12 +14,10 @@ function ItemCard({ item }) {
       <Image style={styles.img} source={imageSrc} />
       <View style={styles.aboutContainer}>
         <Text style={styles.nameText}>{item.name}</Text>
-        <View style={styles.underNameTextContainer}>
-          <Text style={styles.aboutText}>
-            Цена: {Math.round(item.price)} {currencySign}
-          </Text>
-          <Text style={styles.aboutText}>Вес: {item.weight} г.</Text>
-        </View>
+        <Text style={styles.aboutText}>
+          Цена: {Math.round(item.price)} {currencySign}
+        </Text>
+        <Text style={styles.aboutText}>Вес: {item.weight} г.</Text>
       </View>
     </View>
   );

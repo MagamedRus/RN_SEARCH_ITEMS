@@ -6,7 +6,7 @@ import CategoriesList from "../components/CategoriesList";
 import Loader from "../components/Loader";
 import { pageNames } from "../constants/pages";
 
-function CategoriesPage({ navigator, screenTitle = "Категории", path }) {
+function CategoriesPage({ navigator, screenTitle, path }) {
   const [isLoading, setIsLoading] = useState(true);
   const [categories, setCategories] = useState([]);
   const [categoryMeta, setCategoryMeta] = useState({});
@@ -14,20 +14,6 @@ function CategoriesPage({ navigator, screenTitle = "Категории", path })
   useEffect(() => {
     uploadData();
   }, []);
-
-  const goSubcategories = async (category) => {
-    const { id, path, h1, name } = category;
-    const isSubs = await isSubcategories(id);
-    isSubs
-      ? navigator.push(pageNames.CategoriesPage, {
-          screenTitle: h1 || name,
-          path,
-        })
-      : navigator.push(pageNames.ItemsPage, {
-        screenTitle: h1 || name,
-        categoryId: id,
-      });
-  };
 
   const uploadData = useCallback(
     async (page) => {
@@ -40,18 +26,31 @@ function CategoriesPage({ navigator, screenTitle = "Категории", path })
     [isLoading]
   );
 
-  const isSubcategories = async (categoryId) => {
+  const goSubcategories = async ({ id, path, h1, name }) => {
+    const isHaveSubs = await isHaveSubcategories(id);
+    isHaveSubs
+      ? navigator.push(pageNames.CategoriesPage, {
+          screenTitle: h1 || name,
+          path,
+        })
+      : navigator.push(pageNames.ItemsPage, {
+          screenTitle: h1 || name,
+          categoryId: id,
+        });
+  };
+
+  const isHaveSubcategories = async (categoryId) => {
     const subCategories = await getCategorySubs(categoryId);
     return subCategories[0] && true;
   };
 
-  const setPageNumber = async (pageNumber) => {
+  const setPageNumber = (pageNumber) => {
     setCategoryMeta((prevState) => ({ ...prevState, currentPage: pageNumber }));
-    await uploadData(pageNumber);
+    uploadData(pageNumber);
   };
 
   return (
-    <MainLayout navigator={navigator} screenTitle={screenTitle}>
+    <MainLayout navigator={navigator} screenTitle={screenTitle || "Категории"}>
       {!isLoading && (
         <CategoriesList
           categories={categories}
