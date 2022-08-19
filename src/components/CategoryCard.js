@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Text, TouchableOpacity, Image } from "react-native";
 
 function CategoryCard({ category, goSubcategories }) {
   const imageSrc = category.icon
     ? { uri: category.icon }
     : require("../assets/img/nonImgIco.png");
+
   const enterCategory = () => goSubcategories(category);
 
   return (

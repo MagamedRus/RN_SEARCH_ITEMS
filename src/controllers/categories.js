@@ -1,11 +1,10 @@
 import axios from "axios";
 import { IP_SERVER, PATH_CATEGORY } from "../constants/server";
 
-//Togo: fill it
 export const getCategories = async (page, path) => {
   let result = { items: [], pageCount: 0 };
   await axios
-    .get(IP_SERVER + PATH_CATEGORY, {
+    .get(`${IP_SERVER}${PATH_CATEGORY}`, {
       params: {
         page: page || null,
         path: path || null,
@@ -18,7 +17,7 @@ export const getCategories = async (page, path) => {
         result = { items, meta: _meta };
       }
     })
-    .catch((err) => console.log(err)); // here could be alert
+    .catch((err) => console.log("getCategories err -", err));
 
   return result;
 };
@@ -35,6 +34,6 @@ export const getCategorySubs = async (categoryId) => {
       const data = res.data;
       if (data) result = data.sub_categories;
     })
-    .catch((err) => console.log(err)); // here could be alert
+    .catch((err) => console.log("getCategorySubs err -", err));
   return result;
 };

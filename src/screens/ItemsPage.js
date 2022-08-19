@@ -25,15 +25,14 @@ function ItemsPage({ navigator, categoryId, screenTitle = "Товары" }) {
     [isLoading]
   );
 
-	const setPageNumber = async (pageNumber) => {
+  const setPageNumber = (pageNumber) => {
     setItemsMeta((prevState) => ({ ...prevState, currentPage: pageNumber }));
-    await uploadData(pageNumber);
+    uploadData(pageNumber);
   };
 
   return (
     <MainLayout screenTitle={screenTitle} navigator={navigator}>
-      {!isLoading && <ItemsList items={items} />}
-      {isLoading && <Loader />}
+      {!isLoading ? <ItemsList items={items} /> : <Loader />}
       <PageScroller
         onChange={setPageNumber}
         currentPage={itemsMeta.currentPage}
