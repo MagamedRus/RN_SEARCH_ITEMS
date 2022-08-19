@@ -1,5 +1,5 @@
 import React from "react"
-import { StyleSheet, Text, View, StatusBar } from "react-native"
+import { StyleSheet, Text, View, StatusBar, Dimensions } from "react-native"
 import ArrowButton from "./ArrowButton";
 
 
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     textAlignVertical: 'center',
     fontSize: 19,
-    width: 210,
+    maxWidth: Dimensions.get('screen').width - 70,
     marginLeft: 15,
     marginTop: 5,
     fontFamily: "Inter-Medium",
