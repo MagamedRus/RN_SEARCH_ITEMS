@@ -1,4 +1,4 @@
-# RN_SEARCH_ITEMS
+# Search Items App
 
 Commands:
   - run server: npm start
