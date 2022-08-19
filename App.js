@@ -1,21 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import CategoriesPage from "./src/screens/CategoriesPage";
+import ItemsPage from "./src/screens/ItemsPage";
+import Router from "react-native-easy-router";
+import { pageNames } from "./src/constants/pages";
+
+const routes = {
+  CategoriesPage,
+  ItemsPage,
+};
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <Router screens={routes} initialStack={pageNames.CategoriesPage} />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
