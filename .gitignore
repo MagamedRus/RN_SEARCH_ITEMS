@@ -57,3 +57,4 @@ dist/
 
 # Builds
 *.apk
+android/app/debug.keystore

@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   choosedPageNumber: {
-    paddingHorizontal: 5,
+    paddingHorizontal: 8,
     borderLeftColor: "rgba(0,0,0,0.4)",
     borderRightColor: "rgba(0,0,0,0.4)",
     borderRightWidth: 2,

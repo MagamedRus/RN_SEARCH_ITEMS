@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   },
   dotText: {
     lineHeight: 40,
-    fontSize: 18,
+    fontSize: 14,
     color: "white",
     marginHorizontal: 3,
     textAlign: "center",
