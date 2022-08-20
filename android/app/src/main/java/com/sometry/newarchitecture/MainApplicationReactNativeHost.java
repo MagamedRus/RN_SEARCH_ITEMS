@@ -1,4 +1,4 @@
-package com.sometry.newarchitecture;
+package com.Search Items.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.sometry.BuildConfig;
-import com.sometry.newarchitecture.components.MainComponentsRegistry;
-import com.sometry.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.Search Items.BuildConfig;
+import com.Search Items.newarchitecture.components.MainComponentsRegistry;
+import com.Search Items.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
