@@ -1,4 +1,4 @@
-package com.Search Items.newarchitecture.components;
+package com.search_items.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

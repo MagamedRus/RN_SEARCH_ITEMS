@@ -1,4 +1,4 @@
-package com.Search Items.newarchitecture.modules;
+package com.search_items.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

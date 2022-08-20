@@ -1,4 +1,4 @@
-package com.Search Items;
+package com.search_items;
 
 import android.os.Build;
 import android.os.Bundle;
