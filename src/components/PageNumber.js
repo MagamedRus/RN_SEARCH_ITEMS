@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-function PageNumber({ number, onPress, isChoosed, isLast }) {
+function PageNumber({ number, onPress, isChoosed }) {
   const numberStyle = isChoosed
     ? [styles.pageNumber, styles.choosedPageNumber]
     : styles.pageNumber;
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     lineHeight: 40,
     fontSize: 18,
     color: "white",
-    marginHorizontal: 3,
+    marginHorizontal: 5,
     textAlign: "center",
   },
   choosedPageNumber: {
